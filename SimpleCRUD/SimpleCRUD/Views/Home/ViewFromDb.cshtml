@@ -1,0 +1,27 @@
+﻿@model SimpleCRUD.Models.BookViewModel
+
+@{
+	ViewBag.Title = "ViewFromDb";
+}
+
+<h2>ViewFromDb</h2><br>
+<table>
+	<tr>
+		<td>Title</td>
+		<td>Author</td>
+		<td>Quantity</td>
+		<td>Edit</td>
+		<td>Delete</td>	
+	</tr>
+	@foreach (var data in Model.lstBook)
+	{
+		<tr>
+			<td>@data.BookTitle</td>
+			<td>@data.BookAuthor</td>
+			<td>@data.BookQuantity</td>
+			<td><a href="#">Edit</a></td>
+			<td><a href="#">Delete</td>
+		</tr>
+	}
+
+</table>

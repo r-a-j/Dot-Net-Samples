@@ -1,0 +1,18 @@
+﻿@model SimpleCRUD.Models.BookViewModel
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+	@Html.EditorFor(model => model.BookTitle, new { htmlAttributes = new { @class = "form-group", placeholder = "Title" } })<br>
+	@Html.EditorFor(model => model.BookAuthor, new { htmlAttributes = new { @class = "form-group", placeholder = "Author" } })<br>
+	@Html.EditorFor(model => model.BookQuantity, new { htmlAttributes = new { @class = "form-group", placeholder = "Quantity" } }) <br>
+
+	<input type="submit" value="Add">
+}
+
+
+

@@ -1,0 +1,27 @@
+﻿@model LibraryManagement.Models.BookViewModel
+@{
+	/**/
+
+	ViewBag.Title = "HomeIndexView";
+}
+
+<h2>Library Books</h2>
+
+@*@using (Html.BeginForm("AddToDatabase", "Home", FormMethod.Post))
+	{
+		@Html.HiddenFor(model => model.BookId)
+		@Html.EditorFor(model => model.BookTitle, new { htmlAttributes = new { placeholder = "Title" } })
+		@Html.EditorFor(model => model.BookAuthor, new { htmlAttributes = new { placeholder = "Author" } })
+		@Html.EditorFor(model => model.BookQuantity, new { htmlAttributes = new { placeholder = "Quantity" } })
+
+		<input type="submit" name="submit" value="Add" onclick="openEditBook()" />
+
+		<a a href="javascript:;"  data--id="@item.BookId">Edit</a>
+	}*@
+
+@ViewBag.Test<br />
+@ViewData["Test"]<br />
+@TempData["TestTemp"]
+
+@Html.ActionLink("Show", "DisplayFormDatabase", "Home")
+

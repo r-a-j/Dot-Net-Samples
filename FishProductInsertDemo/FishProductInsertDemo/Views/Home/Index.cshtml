@@ -1,0 +1,18 @@
+﻿@model FishProductInsertDemo.Models.FishViewModel
+@{
+	ViewBag.Title = "Home Page";
+}
+
+</br>
+</br>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+	@Html.AntiForgeryToken()
+
+	@Html.TextBoxFor(model => model.FishName)
+	@Html.TextBoxFor(model => model.FishType)
+	@Html.TextBoxFor(model => model.FishQuantity)
+
+	<input type="submit" />
+}

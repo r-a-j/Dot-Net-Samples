@@ -1,0 +1,93 @@
+﻿@model LibraryManagement.Models.BookViewModel
+@{
+	ViewBag.Title = "DisplayFormDatabase";
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>s
+<h2>DisplayFormDatabase</h2>
+
+<a href="javascript:;" onclick="openAddBook()">Add</a>
+
+<table class="table">
+	<thead>
+	<td>Title</td>
+	<td>Author</td>
+	<td>Quantity</td>
+	<td>Edit</td>
+	<td>Delete</td>
+	</thead>
+
+	<tbody>
+		@foreach (var item in Model.lstBook)
+		{
+			<tr>
+				<td>@item.BookTitle</td>
+				<td>@item.BookAuthor</td>
+				<td>@item.BookQuantity</td>
+				<td><a a href="javascript:;" onclick="openEditBook(this)" data-id="@item.BookId">Edit</a></td>
+				<td><a a href="javascript:;" onclick="openDeleteBook(this)" data-id="@item.BookId">Delete</a></td>
+			</tr>
+		}
+	</tbody>
+
+</table>
+
+<div id="divAddEdit">
+
+</div>
+
+<script>
+
+	// Javascript function for opening Add book dialog.
+	//function openAddBook() {
+	//	$.ajax({
+	//		url:"/Home/AddToDatabase",
+	//	}).done(function (e) {
+	//		if (e.error) {
+	//			alert(e.error);
+	//		} else {
+	//			$("#divAddEdit").html(e);
+	//			// What does this modal do ??
+	//			$("#dialogAddEdit").modal('show');
+	//		}
+	//	});
+	//}
+
+	function openAddBook() {
+		$.ajax({
+			type: "POST",
+			url: "/Home/AddToDatabase",
+			success: function (response) {
+				$("#divAddEdit").html(response);
+				$("#dialogAddEdit").modal('show');
+			}
+		});
+	}
+
+
+	// Javascript function for Editing Book Details Dialog.
+	function openEditBook(obj) {
+
+		var id = obj.getAttribute('data-id');
+
+		$.ajax({
+			url: "/Home/EditDatabase/" + id,
+		}).done(function (e) {
+			if (e.error) {
+				alert(e.error)
+			} else {
+				$('#divAddEdit').html(e);
+				$('#dialogAddEdit').modal('show');
+			}
+		});
+	}
+
+	// Javascript function for Deleting Book Dialog
+	//function openDeleteBook() {
+
+	//}
+
+</script>
+
+

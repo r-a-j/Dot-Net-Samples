@@ -1,0 +1,6 @@
+E:\RP_Dot-Net\Sample Projects\linqdemo\linqdemo\obj\Debug\linqdemo.csproj.CoreCompileInputs.cache
+E:\RP_Dot-Net\Sample Projects\linqdemo\linqdemo\bin\Debug\linqdemo.exe.config
+E:\RP_Dot-Net\Sample Projects\linqdemo\linqdemo\bin\Debug\linqdemo.exe
+E:\RP_Dot-Net\Sample Projects\linqdemo\linqdemo\bin\Debug\linqdemo.pdb
+E:\RP_Dot-Net\Sample Projects\linqdemo\linqdemo\obj\Debug\linqdemo.exe
+E:\RP_Dot-Net\Sample Projects\linqdemo\linqdemo\obj\Debug\linqdemo.pdb
